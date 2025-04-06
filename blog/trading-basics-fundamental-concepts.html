@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Basics: Understanding Fundamental Concepts | Market Insights</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+        }
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .author {
+            font-weight: bold;
+            color: #3498db;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .chart-container {
+            height: 300px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        .conclusion {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .sources {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #2c3e50;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .formula {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .example {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trading Basics: Understanding Fundamental Concepts</h1>
+        <div class="date">April 6, 2025</div>
+        <div class="author">By Market Analyst</div>
+    </header>
+
+    <main>
+        <p>
+            Whether you're a beginner looking to enter the stock market or an intermediate investor aiming to refine your 
+            strategy, understanding fundamental concepts is crucial for making informed investment decisions. This guide 
+            explores key financial metrics and concepts that form the foundation of stock analysis and valuation.
+        </p>
+
+        <div class="highlight">
+            Fundamental analysis involves evaluating a company's financial health, competitive position, and growth prospects 
+            to determine its intrinsic value. This approach contrasts with technical analysis, which focuses on price patterns 
+            and market trends.
+        </div>
+
+        <h2>Essential Valuation Metrics</h2>
+        
+        <h3>Price-to-Earnings Ratio (P/E)</h3>
+        <p>
+            The P/E ratio is one of the most widely used valuation metrics. It compares a company's stock price to its 
+            earnings per share (EPS), indicating how much investors are willing to pay for each dollar of earnings.
+        </p>
+        <p class="formula">P/E Ratio = Stock Price ÷ Earnings Per Share (EPS)</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company A's stock trades at $50 and its EPS is $2.50, its P/E ratio is 20 
+            ($50 ÷ $2.50 = 20). This means investors are willing to pay $20 for every $1 of earnings.
+        </div>
+        
+        <p>
+            A high P/E ratio may suggest that investors expect higher earnings growth in the future, or it could indicate 
+            that the stock is overvalued. Conversely, a low P/E ratio might signal an undervalued stock or reflect concerns 
+            about the company's future prospects.
+        </p>
+        
+        <div class="chart-container">
+            <canvas id="peRatioChart"></canvas>
+        </div>
+        
+        <p>
+            It's important to compare P/E ratios within the same industry, as different sectors typically have different 
+            average P/E ratios. For example, technology companies often have higher P/E ratios than utility companies.
+        </p>
+        
+        <h3>Earnings Per Share (EPS)</h3>
+        <p>
+            EPS represents a company's profit allocated to each outstanding share of common stock. It's a key indicator 
+            of a company's profitability and is used in calculating many other financial metrics.
+        </p>
+        <p class="formula">EPS = (Net Income - Preferred Dividends) ÷ Outstanding Common Shares</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company B has a net income of $10 million, pays $1 million in preferred dividends, 
+            and has 3 million outstanding shares, its EPS would be $3 (($10M - $1M) ÷ 3M = $3).
+        </div>
+        
+        <p>
+            Growing EPS over time generally indicates improving profitability and is often correlated with increasing 
+            stock prices. Investors should pay attention to both the absolute EPS value and its growth trend.
+        </p>
+        
+        <h3>Price-to-Book Ratio (P/B)</h3>
+        <p>
+            The P/B ratio compares a company's market value to its book value (the net asset value of a company as shown 
+            on the balance sheet). It indicates how much investors are willing to pay for each dollar of net assets.
+        </p>
+        <p class="formula">P/B Ratio = Stock Price ÷ Book Value Per Share</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company C's stock trades at $30 and its book value per share is $15, its P/B ratio 
+            is 2 ($30 ÷ $15 = 2). This means the market values the company at twice its accounting value.
+        </div>
+        
+        <p>
+            A P/B ratio below 1 might suggest that a stock is undervalued, though it could also indicate fundamental problems 
+            with the company. Industries that require significant physical assets (like manufacturing) typically have lower 
+            P/B ratios than those with primarily intangible assets (like software companies).
+        </p>
+        
+        <h3>Book Value Per Share (BVPS)</h3>
+        <p>
+            Book value per share represents the per-share value of a company's equity according to its balance sheet. It's 
+            calculated by dividing the company's total equity by the number of outstanding shares.
+        </p>
+        <p class="formula">BVPS = (Total Equity - Preferred Equity) ÷ Outstanding Common Shares</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company D has total equity of $200 million, preferred equity of $20 million, and 
+            10 million outstanding shares, its BVPS would be $18 (($200M - $20M) ÷ 10M = $18).
+        </div>
+        
+        <p>
+            BVPS is often used as a conservative estimate of a company's value, as it represents the amount shareholders 
+            would theoretically receive if the company were liquidated. Growing BVPS over time indicates that a company is 
+            increasing its net worth.
+        </p>
+        
+        <h3>Dividend Yield</h3>
+        <p>
+            Dividend yield measures the annual dividend income relative to a stock's price, expressed as a percentage. It's 
+            particularly important for income-focused investors.
+        </p>
+        <p class="formula">Dividend Yield = Annual Dividends Per Share ÷ Stock Price × 100%</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company E pays annual dividends of $2 per share and its stock trades at $50, its 
+            dividend yield is 4% ($2 ÷ $50 × 100% = 4%).
+        </div>
+        
+        <p>
+            Higher dividend yields can be attractive for income-seeking investors, but extremely high yields might indicate 
+            that the market expects the dividend to be cut. Mature companies in stable industries (like utilities) typically 
+            offer higher dividend yields than growth-oriented companies that reinvest profits.
+        </p>
+        
+        <div class="chart-container">
+            <canvas id="dividendYieldChart"></canvas>
+        </div>
+
+        <h2>Profitability Metrics</h2>
+        
+        <h3>Return on Equity (ROE)</h3>
+        <p>
+            ROE measures a company's profitability by revealing how much profit it generates with the money shareholders have 
+            invested. It indicates management's efficiency in using equity financing to fund operations and grow the business.
+        </p>
+        <p class="formula">ROE = Net Income ÷ Shareholders' Equity × 100%</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company F has a net income of $15 million and shareholders' equity of $100 million, 
+            its ROE is 15% ($15M ÷ $100M × 100% = 15%).
+        </div>
+        
+        <p>
+            A higher ROE generally indicates better efficiency in generating profits from equity. However, extremely high ROE 
+            might result from excessive debt (which reduces equity) rather than strong operational performance.
+        </p>
+        
+        <h3>Profit Margin</h3>
+        <p>
+            Profit margin measures the percentage of revenue that translates into profit. There are several types of profit 
+            margins, including gross profit margin, operating profit margin, and net profit margin.
+        </p>
+        <p class="formula">Net Profit Margin = Net Income ÷ Revenue × 100%</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company G has a net income of $20 million and revenue of $200 million, its net profit 
+            margin is 10% ($20M ÷ $200M × 100% = 10%).
+        </div>
+        
+        <p>
+            Higher profit margins indicate more efficient operations and better pricing power. Comparing a company's profit 
+            margins to industry averages can provide insights into its competitive position.
+        </p>
+
+        <h2>Growth Metrics</h2>
+        
+        <h3>Revenue Growth Rate</h3>
+        <p>
+            Revenue growth rate measures the percentage increase in a company's sales over a specific period, typically 
+            year-over-year or quarter-over-quarter.
+        </p>
+        <p class="formula">Revenue Growth Rate = (Current Period Revenue - Prior Period Revenue) ÷ Prior Period Revenue × 100%</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company H had revenue of $50 million last year and $60 million this year, its 
+            year-over-year revenue growth rate is 20% (($60M - $50M) ÷ $50M × 100% = 20%).
+        </div>
+        
+        <p>
+            Consistent revenue growth is generally a positive sign, indicating increasing demand for a company's products or 
+            services. However, it's important to consider whether growth is organic or due to acquisitions.
+        </p>
+        
+        <h3>Earnings Growth Rate</h3>
+        <p>
+            Earnings growth rate measures the percentage increase in a company's earnings (usually EPS) over time.
+        </p>
+        <p class="formula">Earnings Growth Rate = (Current Period EPS - Prior Period EPS) ÷ Prior Period EPS × 100%</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company I had an EPS of $2 last year and $2.50 this year, its earnings growth rate 
+            is 25% (($2.50 - $2) ÷ $2 × 100% = 25%).
+        </div>
+        
+        <p>
+            Earnings growth that outpaces revenue growth suggests improving operational efficiency. Conversely, earnings growth 
+            that lags revenue growth might indicate rising costs or pricing pressure.
+        </p>
+        
+        <div class="chart-container">
+            <canvas id="growthComparisonChart"></canvas>
+        </div>
+
+        <h2>Debt and Liquidity Metrics</h2>
+        
+        <h3>Debt-to-Equity Ratio</h3>
+        <p>
+            The debt-to-equity ratio measures a company's financial leverage by comparing its total debt to shareholders' equity.
+        </p>
+        <p class="formula">Debt-to-Equity Ratio = Total Debt ÷ Shareholders' Equity</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company J has total debt of $30 million and shareholders' equity of $60 million, its 
+            debt-to-equity ratio is 0.5 ($30M ÷ $60M = 0.5).
+        </div>
+        
+        <p>
+            A lower debt-to-equity ratio generally indicates a more financially stable company with less risk. However, some 
+            debt can be beneficial for growth and tax advantages. Optimal debt levels vary significantly by industry.
+        </p>
+        
+        <h3>Current Ratio</h3>
+        <p>
+            The current ratio measures a company's ability to pay short-term obligations by comparing current assets to current 
+            liabilities.
+        </p>
+        <p class="formula">Current Ratio = Current Assets ÷ Current Liabilities</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company K has current assets of $40 million and current liabilities of $20 million, 
+            its current ratio is 2 ($40M ÷ $20M = 2).
+        </div>
+        
+        <p>
+            A current ratio above 1 indicates that a company has more current assets than current liabilities, suggesting it 
+            can meet short-term obligations. However, an extremely high current ratio might indicate inefficient use of assets.
+        </p>
+
+        <h2>Cash Flow Metrics</h2>
+        
+        <h3>Free Cash Flow (FCF)</h3>
+        <p>
+            Free cash flow represents the cash a company generates after accounting for capital expenditures. It indicates the 
+            cash available for distribution to investors or for reinvestment in the business.
+        </p>
+        <p class="formula">FCF = Operating Cash Flow - Capital Expenditures</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company L has operating cash flow of $25 million and capital expenditures of $10 million, 
+            its FCF is $15 million ($25M - $10M = $15M).
+        </div>
+        
+        <p>
+            Positive and growing FCF is generally a good sign, indicating that a company can fund its operations and investments 
+            without relying on external financing. FCF is often considered a more reliable indicator of financial health than 
+            earnings, as it's harder to manipulate through accounting practices.
+        </p>
+        
+        <h3>Cash Flow Per Share</h3>
+        <p>
+            Cash flow per share measures the amount of cash flow attributable to each outstanding share of common stock.
+        </p>
+        <p class="formula">Cash Flow Per Share = (Operating Cash Flow - Preferred Dividends) ÷ Outstanding Common Shares</p>
+        
+        <div class="example">
+            <strong>Example:</strong> If Company M has operating cash flow of $30 million, pays no preferred dividends, and has 
+            10 million outstanding shares, its cash flow per share is $3 ($30M ÷ 10M = $3).
+        </div>
+        
+        <p>
+            Like EPS, cash flow per share provides a per-share perspective on a company's financial performance. Some investors 
+            prefer cash flow per share over EPS because cash flow is less susceptible to accounting manipulations.
+        </p>
+
+        <div class="chart-container">
+            <canvas id="metricComparisonChart"></canvas>
+        </div>
+
+        <h2>Industry-Specific Metrics</h2>
+        <p>
+            Beyond the general metrics discussed above, many industries have specific metrics that are particularly relevant 
+            for evaluating companies within that sector:
+        </p>
+        
+        <table>
+            <tr>
+                <th>Industry</th>
+                <th>Key Metrics</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Retail</td>
+                <td>Same-Store Sales Growth</td>
+                <td>Year-over-year sales growth for stores open at least one year</td>
+            </tr>
+            <tr>
+                <td>Technology</td>
+                <td>Monthly Active Users (MAU)</td>
+                <td>Number of unique users who engage with a platform in a month</td>
+            </tr>
+            <tr>
+                <td>Real Estate</td>
+                <td>Funds From Operations (FFO)</td>
+                <td>A measure of cash generated by REITs, similar to FCF</td>
+            </tr>
+            <tr>
+                <td>Banking</td>
+                <td>Net Interest Margin</td>
+                <td>Difference between interest income and interest expenses, relative to assets</td>
+            </tr>
+            <tr>
+                <td>Healthcare</td>
+                <td>R&D as % of Revenue</td>
+                <td>Indicates investment in future products and treatments</td>
+            </tr>
+            <tr>
+                <td>Subscription Services</td>
+                <td>Customer Acquisition Cost (CAC)</td>
+                <td>Cost to acquire a new customer</td>
+            </tr>
+            <tr>
+                <td>Subscription Services</td>
+                <td>Customer Lifetime Value (CLV)</td>
+                <td>Total value a customer generates over their relationship with the company</td>
+            </tr>
+        </table>
+
+        <div class="conclusion">
+            <h2>Putting It All Together: A Holistic Approach to Stock Analysis</h2>
+            <p>
+                While individual metrics provide valuable insights, the most effective analysis combines multiple metrics to 
+                form a comprehensive view of a company's financial health, growth prospects, and valuation. Here's a framework 
+                for approaching stock analysis:
+            </p>
+            <ol>
+                <li><strong>Understand the Business Model:</strong> Before diving into metrics, understand how the company makes 
+                money and its competitive position within its industry.</li>
+                <li><strong>Analyze Growth Trends:</strong> Look at revenue and earnings growth over multiple periods to identify 
+                consistent patterns and potential inflection points.</li>
+                <li><strong>Assess Profitability:</strong> Examine profit margins and returns on equity to evaluate operational 
+                efficiency and management effectiveness.</li>
+                <li><strong>Evaluate Financial Health:</strong> Review debt levels, liquidity ratios, and cash flow metrics to 
+                gauge financial stability and flexibility.</li>
+                <li><strong>Consider Valuation:</strong> Use P/E, P/B, and other valuation metrics to determine whether the stock 
+                is reasonably priced relative to its fundamentals and growth prospects.</li>
+                <li><strong>Compare to Peers:</strong> Benchmark the company against industry competitors to identify relative 
+                strengths and weaknesses.</li>
+            </ol>
+            <p>
+                Remember that no single metric tells the complete story, and historical performance doesn't guarantee future 
+                results. The most successful investors combine quantitative analysis with qualitative factors like management 
+                quality, competitive advantages, and industry trends.
+            </p>
+        </div>
+
+        <div class="sources">
+            <h3>Sources</h3>
+            <p>
+                Information compiled from various financial education resources including Investopedia, The Motley Fool, 
+                Yahoo Finance, and academic finance literature. This guide is intended for educational purposes and does not 
+                constitute investment advice.
+            </p>
+        </div>
+    </main>
+
+    <script>
+        // Chart 1: P/E Ratios Across Industries
+        const peRatioCtx = document.getElementById('peRatioChart').getContext('2d');
+        const peRatioChart = new Chart(peRatioCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Technology', 'Healthcare', 'Consumer Staples', 'Utilities', 'Energy', 'Financials'],
+                datasets: [{
+                    label: 'Average P/E Ratio',
+                    data: [28, 22, 19, 16, 12, 10],
+                    backgroundColor: [
+                        'rgba(52, 152, 219, 0.7)',
+                        'rgba(46, 204, 113, 0.7)',
+                        'rgba(155, 89, 182, 0.7)',
+                        'rgba(241, 196, 15, 0.7)',
+                        'rgba(230, 126, 34, 0.7)',
+                        'rgba(231, 76, 60, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(52, 152, 219, 1)',
+                        'rgba(46, 204, 113, 1)',
+                        'rgba(155, 89, 182, 1)',
+                        'rgba(241, 196, 15, 1)',
+                        'rgba(230, 126, 34, 1)',
+                        'rgba(231, 76, 60, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Average P/E Ratios Across Industries (2025)',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `P/E Ratio: ${context.raw}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'P/E Ratio'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: Dividend Yields Across Industries
+        const dividendYieldCtx = document.getElementById('dividendYieldChart').getContext('2d');
+        const dividendYieldChart = new Chart(dividendYieldCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Utilities', 'Real Estate', 'Energy', 'Financials', 'Consumer Staples', 'Technology'],
+                datasets: [{
+                    label: 'Average Dividend Yield (%)',
+                    data: [4.2, 3.8, 3.5, 2.8, 2.2, 1.0],
+                    backgroundColor: [
+                        'rgba(241, 196, 15, 0.7)',
+                        'rgba(230, 126, 34, 0.7)',
+                        'rgba(231, 76, 60, 0.7)',
+                        'rgba(155, 89, 182, 0.7)',
+                        'rgba(46, 204, 113, 0.7)',
+                        'rgba(52, 152, 219, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(241, 196, 15, 1)',
+                        'rgba(230, 126, 34, 1)',
+                        'rgba(231, 76, 60, 1)',
+                        'rgba(155, 89, 182, 1)',
+                        'rgba(46, 204, 113, 1)',
+                        'rgba(52, 152, 219, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Average Dividend Yields Across Industries (2025)',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Dividend Yield: ${context.raw}%`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Dividend Yield (%)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 3: Growth Comparison
+        const growthComparisonCtx = document.getElementById('growthComparisonChart').getContext('2d');
+        const growthComparisonChart = new Chart(growthComparisonCtx, {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [
+                    {
+                        label: 'High Growth Company',
+                        data: [100, 130, 169, 220, 286, 372],
+                        borderColor: 'rgba(52, 152, 219, 1)',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Moderate Growth Company',
+                        data: [100, 115, 132, 152, 175, 201],
+                        borderColor: 'rgba(46, 204, 113, 1)',
+                        backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Stable Dividend Company',
+                        data: [100, 105, 110, 116, 122, 128],
+                        borderColor: 'rgba(241, 196, 15, 1)',
+                        backgroundColor: 'rgba(241, 196, 15, 0.1)',
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Growth Comparison: Different Company Types (Indexed to 100)',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Growth Index (2020 = 100)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 4: Metric Comparison for Value vs. Growth Stocks
+        const metricComparisonCtx = document.getElementById('metricComparisonChart').getContext('2d');
+        const metricComparisonChart = new Chart(metricComparisonCtx, {
+            type: 'radar',
+            data: {
+                labels: ['P/E Ratio', 'Dividend Yield', 'Revenue Growth', 'Profit Margin', 'Debt-to-Equity', 'ROE'],
+                datasets: [
+                    {
+                        label: 'Typical Growth Stock',
+                        data: [30, 0.5, 25, 15, 0.8, 20],
+                        backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                        borderColor: 'rgba(52, 152, 219, 1)',
+                        pointBackgroundColor: 'rgba(52, 152, 219, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(52, 152, 219, 1)'
+                    },
+                    {
+                        label: 'Typical Value Stock',
+                        data: [12, 3.5, 5, 22, 0.4, 15],
+                        backgroundColor: 'rgba(46, 204, 113, 0.2)',
+                        borderColor: 'rgba(46, 204, 113, 1)',
+                        pointBackgroundColor: 'rgba(46, 204, 113, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(46, 204, 113, 1)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Comparing Key Metrics: Growth vs. Value Stocks',
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: {
+                            display: true
+                        },
+                        suggestedMin: 0
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
