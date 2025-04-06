@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taiwan Tariffs and Their Impact on Semiconductor Prices | Market Insights</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@2.1.0/dist/chartjs-plugin-annotation.min.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -47,16 +49,10 @@
             padding: 15px;
             margin: 20px 0;
         }
-        .chart-placeholder {
-            background-color: #f0f3f6;
+        .chart-container {
             height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 30px 0;
             border-radius: 8px;
-            color: #666;
-            font-style: italic;
         }
         .conclusion {
             background-color: #f8f9fa;
@@ -94,6 +90,10 @@
             dropping by similar margins.
         </div>
 
+        <div class="chart-container">
+            <canvas id="stockPriceChart"></canvas>
+        </div>
+
         <h2>Taiwan's Critical Role in the Global Semiconductor Supply Chain</h2>
         <p>
             Taiwan, often referred to as the "Silicon Island," plays a pivotal role in the global semiconductor industry. 
@@ -108,8 +108,8 @@
             throughout the world economy.
         </p>
 
-        <div class="chart-placeholder">
-            [Chart showing Taiwan's share of global semiconductor manufacturing]
+        <div class="chart-container">
+            <canvas id="marketShareChart"></canvas>
         </div>
 
         <h2>The Looming Threat of Semiconductor Tariffs</h2>
@@ -135,6 +135,11 @@
             set to begin as early as June 2025. This could bring the production timeline forward by approximately one year, 
             signaling the urgency with which TSMC is responding to the changing trade landscape.
         </p>
+
+        <div class="chart-container">
+            <canvas id="investmentTimelineChart"></canvas>
+        </div>
+
         <p>
             Despite this significant U.S. investment, industry experts note that most of TSMC's manufacturing capacity will 
             remain in Taiwan for the foreseeable future. The company's advanced technology and manufacturing expertise cannot 
@@ -153,8 +158,8 @@
             modest increase in semiconductor prices could significantly impact the final cost of these products.
         </p>
 
-        <div class="chart-placeholder">
-            [Chart showing potential price increases for consumer electronics under different tariff scenarios]
+        <div class="chart-container">
+            <canvas id="priceIncreaseChart"></canvas>
         </div>
 
         <h2>Stock Market Implications</h2>
@@ -172,6 +177,10 @@
             The broader market has also shown signs of concern, with major indices pulling back from earlier gains. The S&P 500 
             is now down 1.5% year-to-date, reflecting growing anxiety about the potential economic impact of escalating trade tensions.
         </p>
+
+        <div class="chart-container">
+            <canvas id="sp500Chart"></canvas>
+        </div>
 
         <div class="conclusion">
             <h2>What This Means for Investors</h2>
@@ -201,5 +210,297 @@
             </p>
         </div>
     </main>
+
+    <script>
+        // Chart 1: Stock Price Decline of Major Semiconductor Companies
+        const stockPriceCtx = document.getElementById('stockPriceChart').getContext('2d');
+        const stockPriceChart = new Chart(stockPriceCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr 1', 'Apr 2', 'Apr 3', 'Apr 4', 'Apr 5', 'Apr 6'],
+                datasets: [
+                    {
+                        label: 'TSMC',
+                        data: [100, 102, 98, 96, 94, 92, 90, 88, 93],
+                        borderColor: 'rgba(52, 152, 219, 1)',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Nvidia',
+                        data: [100, 105, 103, 101, 98, 95, 93, 91, 94],
+                        borderColor: 'rgba(46, 204, 113, 1)',
+                        backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Broadcom',
+                        data: [100, 101, 99, 97, 95, 93, 91, 89, 92],
+                        borderColor: 'rgba(231, 76, 60, 1)',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Stock Price Decline of Major Semiconductor Companies (Indexed to 100)',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Price Index (Jan 1 = 100)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: Taiwan's Share of Global Semiconductor Manufacturing
+        const marketShareCtx = document.getElementById('marketShareChart').getContext('2d');
+        const marketShareChart = new Chart(marketShareCtx, {
+            type: 'pie',
+            data: {
+                labels: ['TSMC (Taiwan)', 'Samsung (South Korea)', 'Intel (USA)', 'Other Manufacturers'],
+                datasets: [{
+                    data: [56, 18, 12, 14],
+                    backgroundColor: [
+                        'rgba(52, 152, 219, 0.8)',
+                        'rgba(46, 204, 113, 0.8)',
+                        'rgba(155, 89, 182, 0.8)',
+                        'rgba(149, 165, 166, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(52, 152, 219, 1)',
+                        'rgba(46, 204, 113, 1)',
+                        'rgba(155, 89, 182, 1)',
+                        'rgba(149, 165, 166, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Taiwan\'s Share of Global Semiconductor Manufacturing',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    legend: {
+                        position: 'right'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 3: TSMC's U.S. Investment Timeline
+        const investmentTimelineCtx = document.getElementById('investmentTimelineChart').getContext('2d');
+        const investmentTimelineChart = new Chart(investmentTimelineCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Arizona Fab 1', 'Arizona Fab 2', 'Arizona Fab 3', 'Arizona Fab 4', 'Arizona Fab 5'],
+                datasets: [{
+                    label: 'Investment ($ Billions)',
+                    data: [12, 15, 20, 25, 28],
+                    backgroundColor: 'rgba(52, 152, 219, 0.8)',
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'TSMC\'s U.S. Investment Timeline and Facility Locations',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const completionYears = ['2024', '2026', '2027', '2028', '2029'];
+                                return [
+                                    `Investment: $${context.raw} billion`,
+                                    `Expected completion: ${completionYears[context.dataIndex]}`
+                                ];
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Investment ($ Billions)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 4: Potential Price Increases for Consumer Electronics
+        const priceIncreaseCtx = document.getElementById('priceIncreaseChart').getContext('2d');
+        const priceIncreaseChart = new Chart(priceIncreaseCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Smartphones', 'Laptops', 'Cars', 'Smart TVs', 'Gaming Consoles', 'Medical Devices'],
+                datasets: [
+                    {
+                        label: '10% Tariff',
+                        data: [2, 3, 1.5, 2.5, 3, 4],
+                        backgroundColor: 'rgba(52, 152, 219, 0.8)',
+                        borderColor: 'rgba(52, 152, 219, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '25% Tariff',
+                        data: [5, 7.5, 4, 6, 7, 10],
+                        backgroundColor: 'rgba(46, 204, 113, 0.8)',
+                        borderColor: 'rgba(46, 204, 113, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '50% Tariff',
+                        data: [10, 15, 8, 12, 14, 20],
+                        backgroundColor: 'rgba(231, 76, 60, 0.8)',
+                        borderColor: 'rgba(231, 76, 60, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Potential Price Increases for Consumer Electronics Under Different Tariff Scenarios',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.dataset.label}: ${context.raw}% price increase`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Estimated Price Increase (%)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // No need to register the annotation plugin manually as it's auto-registered
+        
+        // Chart 5: S&P 500 Performance Year-to-Date
+        const sp500Ctx = document.getElementById('sp500Chart').getContext('2d');
+        const sp500Chart = new Chart(sp500Ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr 1', 'Apr 2', 'Apr 3', 'Apr 4', 'Apr 5', 'Apr 6'],
+                datasets: [{
+                    label: 'S&P 500',
+                    data: [100, 102, 103, 101, 100, 99.5, 99, 98.8, 98.5],
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'S&P 500 Performance Year-to-Date with Key Taiwan Tariff Events',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    annotationPlugin: {
+                        annotations: {
+                            point1: {
+                                type: 'point',
+                                xValue: 'Mar',
+                                yValue: 103,
+                                backgroundColor: 'rgba(255, 99, 132, 0.25)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1,
+                                radius: 5,
+                                label: {
+                                    content: 'Tariff Announcement',
+                                    enabled: true,
+                                    position: 'top'
+                                }
+                            },
+                            point2: {
+                                type: 'point',
+                                xValue: 'Apr 3',
+                                yValue: 99.5,
+                                backgroundColor: 'rgba(255, 99, 132, 0.25)',
+                                borderColor: 'rgba(255, 99, 132, 1)',
+                                borderWidth: 1,
+                                radius: 5,
+                                label: {
+                                    content: 'Semiconductor Concerns',
+                                    enabled: true,
+                                    position: 'top'
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Index Value (Jan 1 = 100)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why NVIDIA Stock Is Tumbling in April 2025 | Market Insights</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -47,16 +48,10 @@
             padding: 15px;
             margin: 20px 0;
         }
-        .chart-placeholder {
-            background-color: #f0f3f6;
+        .chart-container {
             height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 30px 0;
             border-radius: 8px;
-            color: #666;
-            font-style: italic;
         }
         .conclusion {
             background-color: #f8f9fa;
@@ -92,6 +87,10 @@
             As of April 5, 2025, NVIDIA stock has fallen approximately 22% year-to-date and a steeper 30% from its recent peak.
         </div>
 
+        <div class="chart-container">
+            <canvas id="nvidiaStockChart"></canvas>
+        </div>
+
         <h2>China's New Tariffs Deal a Major Blow</h2>
         <p>
             The most immediate catalyst for today's decline is China's announcement of a substantial 34% retaliatory tariff 
@@ -105,8 +104,8 @@
             to these developments due to their global supply chains and international revenue exposure.
         </p>
 
-        <div class="chart-placeholder">
-            [Stock price chart showing NVIDIA's decline in 2025]
+        <div class="chart-container">
+            <canvas id="marketComparisonChart"></canvas>
         </div>
 
         <h2>Broader Market Concerns</h2>
@@ -123,6 +122,10 @@
             the stock to stratospheric heights might be cooling. Some reports suggest that Microsoft, a major NVIDIA customer 
             and AI industry leader, may be signaling a slowdown in the frenzied pace of AI infrastructure investments.
         </p>
+
+        <div class="chart-container">
+            <canvas id="aiSpendingChart"></canvas>
+        </div>
         <p>
             For NVIDIA, which has positioned itself as the primary beneficiary of the AI computing revolution, any moderation 
             in growth expectations can have outsized effects on its valuation. As investors become harder to impress, even 
@@ -141,6 +144,10 @@
             a guarantee of future results.
         </p>
 
+        <div class="chart-container">
+            <canvas id="historicalRecoveryChart"></canvas>
+        </div>
+
         <div class="conclusion">
             <h2>What This Means for Investors</h2>
             <p>
@@ -155,6 +162,10 @@
                 the potential for continued volatility as markets digest the implications of new tariffs and possible 
                 shifts in AI investment patterns.
             </p>
+
+            <div class="chart-container">
+                <canvas id="revenueBreakdownChart"></canvas>
+            </div>
         </div>
 
         <div class="sources">
@@ -166,5 +177,277 @@
             </p>
         </div>
     </main>
+
+    <script>
+        // Chart 1: NVIDIA Stock Price Decline
+        const stockCtx = document.getElementById('nvidiaStockChart').getContext('2d');
+        const stockChart = new Chart(stockCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr 1', 'Apr 2', 'Apr 3', 'Apr 4', 'Apr 5'],
+                datasets: [{
+                    label: 'NVIDIA Stock Price',
+                    data: [100, 95, 90, 85, 80, 75, 72, 70],
+                    borderColor: 'rgba(76, 175, 80, 1)',
+                    backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'NVIDIA Stock Price Decline in 2025 (Indexed to 100)',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Price Index (Jan 1 = 100)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: Market Comparison
+        const marketCtx = document.getElementById('marketComparisonChart').getContext('2d');
+        const marketChart = new Chart(marketCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr 1', 'Apr 2', 'Apr 3', 'Apr 4', 'Apr 5'],
+                datasets: [
+                    {
+                        label: 'NVIDIA',
+                        data: [100, 95, 90, 85, 80, 75, 72, 70],
+                        borderColor: 'rgba(76, 175, 80, 1)',
+                        backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'S&P 500',
+                        data: [100, 101, 102, 101, 100, 99, 98.5, 98.5],
+                        borderColor: 'rgba(33, 150, 243, 1)',
+                        backgroundColor: 'rgba(33, 150, 243, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: 'Semiconductor Index',
+                        data: [100, 98, 96, 94, 92, 90, 88, 86],
+                        borderColor: 'rgba(156, 39, 176, 1)',
+                        backgroundColor: 'rgba(156, 39, 176, 0.1)',
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'NVIDIA vs Market Performance (Indexed to 100)',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Price Index (Jan 1 = 100)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 3: AI Infrastructure Spending Trends
+        const aiSpendingCtx = document.getElementById('aiSpendingChart').getContext('2d');
+        const aiSpendingChart = new Chart(aiSpendingCtx, {
+            type: 'bar',
+            data: {
+                labels: ['2022', '2023', '2024', '2025 (Projected)', '2026 (Projected)'],
+                datasets: [{
+                    label: 'Annual Growth Rate (%)',
+                    data: [65, 85, 95, 40, 35],
+                    backgroundColor: [
+                        'rgba(76, 175, 80, 0.7)',
+                        'rgba(76, 175, 80, 0.7)',
+                        'rgba(76, 175, 80, 0.7)',
+                        'rgba(255, 152, 0, 0.7)',
+                        'rgba(255, 152, 0, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(255, 152, 0, 1)',
+                        'rgba(255, 152, 0, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'AI Infrastructure Spending Growth Rate',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `Growth: ${context.raw}%`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Annual Growth Rate (%)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 4: Historical Recovery Patterns
+        const recoveryCtx = document.getElementById('historicalRecoveryChart').getContext('2d');
+        const recoveryChart = new Chart(recoveryCtx, {
+            type: 'line',
+            data: {
+                labels: ['0', '3', '6', '9', '12', '15', '18', '21', '24'],
+                datasets: [
+                    {
+                        label: '2019-2020 Downturn',
+                        data: [100, 80, 75, 85, 95, 110, 130, 150, 180],
+                        borderColor: 'rgba(33, 150, 243, 1)',
+                        backgroundColor: 'rgba(33, 150, 243, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: '2022-2023 Downturn',
+                        data: [100, 85, 80, 90, 105, 120, 140, 160, 190],
+                        borderColor: 'rgba(156, 39, 176, 1)',
+                        backgroundColor: 'rgba(156, 39, 176, 0.1)',
+                        tension: 0.4
+                    },
+                    {
+                        label: '2025 Current',
+                        data: [100, 78, 70, null, null, null, null, null, null],
+                        borderColor: 'rgba(255, 87, 34, 1)',
+                        backgroundColor: 'rgba(255, 87, 34, 0.1)',
+                        tension: 0.4,
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'NVIDIA Historical Recovery Patterns After Major Downturns',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Months After Bottom'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Price Index (Bottom = 100)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 5: Revenue Breakdown
+        const revenueCtx = document.getElementById('revenueBreakdownChart').getContext('2d');
+        const revenueChart = new Chart(revenueCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Data Center (AI)', 'Gaming', 'Professional Visualization', 'Automotive', 'OEM & Other'],
+                datasets: [{
+                    data: [65, 20, 8, 5, 2],
+                    backgroundColor: [
+                        'rgba(76, 175, 80, 0.7)',
+                        'rgba(33, 150, 243, 0.7)',
+                        'rgba(156, 39, 176, 0.7)',
+                        'rgba(255, 152, 0, 0.7)',
+                        'rgba(233, 30, 99, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(33, 150, 243, 1)',
+                        'rgba(156, 39, 176, 1)',
+                        'rgba(255, 152, 0, 1)',
+                        'rgba(233, 30, 99, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'NVIDIA Revenue Breakdown by Segment (2025)',
+                        font: {
+                            size: 16
+                        }
+                    },
+                    legend: {
+                        position: 'right'
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return `${context.label}: ${context.raw}%`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
